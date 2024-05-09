@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+  
+      input[type="number"] {
+        width: 50px;
+        font-size: 20px;
+      }
+      button {
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px;
+      }
+      
+      h1 {
+      color: pink
+      
+      }
+      
+    </style>
+  </head>
+  <body>
+  	<h1> Enter Name </h1>
+<label for="Name">Name:</label>
+<input type="text" id="Name" name="Name">
+<button
+on click="startGame()"Start Game</button>
+<div id="game">    
+    <h1>Guess the correct number</h1>
+    <p>Choose a number between 1 and 10.</p>
+    <input id="guess-input" type="number" min="1" max="10" value="1">
+    <button onclick="checkGuess()">Guess</button>
+    <p id="result"></p>
+    <script>
+      let numberToGuess = Math.floor(Math.random() * 10) + 1;
+      let guessCount = 0;
+
+      function checkGuess() {
+        guessCount++;
+      const input = document.getElementById("guess-input");
+      const guess = parseInt(input.value);
+        if (guess < 1 || guess > 10) {
+          alert("Enter a number between 1 and 10.");
+          return;
+        }
+        if (guess === numberToGuess) {
+          displayResult("Correct. Guessed the number in " + guessCount + " tries.");
+        } else if (guess < numberToGuess) {
+          displayResult("Number guessed is too low.");
+        } else if (guess > numberToGuess) {
+          displayResult("Number guessed is too high");
+        }
+        lastGuess = guess;
+      }
+
+      function displayResult(message) {
+        const result = document.getElementById("result");
+        result.textContent = message;
+      }
+
+      if (guessCount > 5) {
+        displayResult("Game over. The number was " + numberToGuess );
+        resetGame();
+      }
+    </script>
+  </body>
+</html>
+

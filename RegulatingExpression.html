@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Word Validation</title>
+</head>
+<body>
+  <h1>Word Validation</h1>
+  <p>Enter a word to see if it is valid.</p>
+
+  <script>
+    
+    let word = prompt("Please enter a word:");
+
+  
+    let letterRegExp = /^[A-Za-z]+$/;
+
+   
+    if (letterRegExp.test(word)) {
+      
+      alert("The entered word is valid and contains only letters.");
+    } else {
+     
+      alert("The entered word is invalid and contains numbers or special characters.");
+    }
+  </script>
+</body>
+</html>

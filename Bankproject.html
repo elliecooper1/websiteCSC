@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bank Project</title>
+<style>
+    #accountInformation {
+        color:pink
+        
+    }
+    #money {
+        color:pink
+    }
+    #message {
+        color:pink
+    }
+    h1 {
+        color:pink
+    }
+    #amount {
+        color:pink
+    }
+</style>
+</head>
+<body>
+
+<h1>Bank</h1>
+
+
+<div id="accountInformation">
+<p><strong>Account Number:</strong><let id="accountNumber"></let></p>
+<p><strong>Account Holder Name:</strong><let id="accountHolder"></let></p>
+<p><strong>Balance: $</strong><let id="balance"></let></p>
+</div>
+
+<div id="Money">
+<label for="amount">Enter Amount:</label>   
+<input type="number" id="amount" name="amount">
+<hr></hr>
+<button onclick="myAccount.withdraw()">Withdraw</button>
+<button onclick="myAccount.deposit()">Deposit</button>
+</div>
+
+<div id="message">
+</div>
+
+<script>
+class Bank {
+constructor(accountNumber, accountHolder, balance) {
+this.accountNumber = accountNumber;
+this.accountHolder = accountHolder;
+this.balance = balance;
+}
+
+displayAccountInfo() {
+document.getElementById('accountNumber').textContent = this.accountNumber;
+document.getElementById('accountHolder').textContent = this.accountHolder;
+document.getElementById('balance').textContent = this.balance;
+}
+
+withdraw() {
+let amount = document.getElementById('amount').value;
+if (amount > 0 && amount <= this.balance) {
+this.balance -= amount;
+this.displayAccountInfo();
+showMessage('Withdrawal successful!');
+} else {
+showMessage('Invalid amount');
+}
+}
+
+deposit() {
+let amount = Number(document.getElementById('amount').value);
+if (amount > 0) {
+this.balance += amount;
+this.displayAccountInfo();
+showMessage('Deposit successful!');
+} else {
+showMessage('Invalid amount!');
+        }
+    }
+}
+
+let myAccount = new Bank('12345', 'Ellie', 1500);
+
+function showMessage(message) {
+document.getElementById('message').textContent = message;
+}
+
+myAccount.displayAccountInfo();
+        </script>
+    </body>
+</html> 

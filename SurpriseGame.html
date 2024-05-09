@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Guessing Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="SurpriseStyleSheet.css">
+</head>
+<body>
+	<div class="topnav">
+		<a href="Website.html">Home</a>
+		<a href="Contact.html">Contact</a>
+		<a href="Project.html">Projects</a>
+		<a href="SurpriseGame.html">Surprise</a>
+	  </div>
+	<h1>Number Guessing Game</h1>
+	<p>Guess a number between 1 and 100:</p>
+	<input type="text" id="guess" />
+	<button id="submit">Submit</button>
+	<p id="feedback"></p>
+	<p id="guesses"></p>
+
+	<script>
+		var numberToGuess = Math.floor(Math.random() * 100) + 1;
+		var guesses = 0;
+
+		$("#submit").click(function() {
+			var guess = parseInt($("#guess").val());
+			guesses++;
+
+			if (guess < numberToGuess) {
+				$("#feedback").text("Too low!");
+			} else if (guess > numberToGuess) {
+				$("#feedback").text("Too high!");
+			} else {
+				$("#feedback").text("Congratulations! You guessed the number in " + guesses + " guesses.");
+			}
+
+			$("#guesses").text("Number of guesses: " + guesses);
+			$("#guess").val("");
+		});
+	</script>
+</body>
+</html>

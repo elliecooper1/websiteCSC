@@ -1,0 +1,153 @@
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title
+        </title>
+    <style>
+       .grid{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap: 10px;
+}
+.grid div{
+    background-color: pink;
+}
+</style>
+    </head>
+
+    <body>
+        <div class="grid">
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+            <div id="box4"></div>
+            <div id="box5"></div>
+            <div id="box6"></div>
+            <div id="box7"></div>
+            <div id="box8"></div>
+            <div id="box9"></div>
+        </div>
+
+        <script>
+
+            let switch1 = true;
+
+            document.getElementById("box1").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box1").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box1").innerHTML = "x";
+                switch1 = false;
+            }
+            checkWin();
+
+            })
+            document.getElementById("box2").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box2").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box2").innerHTML = "x";
+                switch1 = false;
+            }           
+            checkWin();
+
+             })
+            document.getElementById("box3").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box3").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box3").innerHTML = "x";
+                switch1 = false;
+            }            
+            checkWin();
+
+            })
+
+            function checkWin() {
+                if (document.getElementById("box1").innerHTML == document.getElementById("box2").innerHTML && document.getElementById("box1").innerHTML == document.getElementById("box3").innerHTML) {
+                    alert("Congratulations! You've won!");
+                }
+            }
+
+            document.getElementById("box4").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box4").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box4").innerHTML = "x";
+                switch1 = false;
+            }
+            })
+            document.getElementById("box5").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box5").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box5").innerHTML = "x";
+                switch1 = false;
+            }
+            })
+            document.getElementById("box6").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box6").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box6").innerHTML = "x";
+                switch1 = false;
+            }
+            })
+            document.getElementById("box7").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box7").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box7").innerHTML = "x";
+                switch1 = false;
+            }
+            })
+            document.getElementById("box8").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box8").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box8").innerHTML = "x";
+                switch1 = false;
+            }
+            })
+            document.getElementById("box9").addEventListener("click", function(){
+
+                if (switch1==false){
+                document.getElementById("box9").innerHTML = "O";
+                switch1 = true;
+            } 
+            else{
+                document.getElementById("box9").innerHTML = "x";
+                switch1 = false;
+            }           
+            })
+           
+        </script>
+
+    </body>
